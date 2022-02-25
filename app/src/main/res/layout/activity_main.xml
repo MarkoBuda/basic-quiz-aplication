@@ -32,7 +32,6 @@
             android:orientation="vertical"
             android:layout_margin="16dp">
             <TextView
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/welcome"
@@ -41,7 +40,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/dark_grey"/>
             <TextView
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/enter_name"
@@ -52,10 +50,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_marginTop="20dp">
                 <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/etName"
@@ -65,9 +63,9 @@
 
             </com.google.android.material.textfield.TextInputLayout>
             <Button
+                android:id="@+id/btnStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/btnStart"
                 android:layout_marginTop="16dp"
                 android:background="@color/design_default_color_on_primary"
