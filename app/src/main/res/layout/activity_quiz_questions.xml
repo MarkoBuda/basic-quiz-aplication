@@ -55,41 +55,55 @@
                 tools:text="0/10"/>
         </LinearLayout>
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tvOptionOne"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Argentina"
             android:gravity="center"
-            android:textSize="20sp"
-            android:layout_margin="8dp"
-            />
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:background="@drawable/default_option_border_bg"/>
         <TextView
+            android:id="@+id/tvOptionTwo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Australia"
             android:gravity="center"
-            android:textSize="20sp"
-            android:layout_margin="8dp"/>
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:background="@drawable/default_option_border_bg"/>
         <TextView
+            android:id="@+id/tvOptionThree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Armenia"
             android:gravity="center"
-            android:textSize="20sp"
-            android:layout_margin="8dp"/>
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:background="@drawable/default_option_border_bg"/>
         <TextView
+            android:id="@+id/tvOptionFour"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Austria"
             android:gravity="center"
-            android:textSize="20sp"
-            android:layout_margin="8dp"/>
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:background="@drawable/default_option_border_bg"/>
         <Button
-            android:layout_marginTop="8dp"
+            android:id="@+id/btnSubmit"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Submit"
-            android:gravity="center"
-            android:textSize="20sp"/>
+            android:text="@string/btnSubmit"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@color/design_default_color_primary"/>
     </LinearLayout>
 
 </ScrollView>
