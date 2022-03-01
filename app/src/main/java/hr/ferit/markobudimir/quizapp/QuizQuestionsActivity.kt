@@ -41,6 +41,11 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tvOptionFour = findViewById(R.id.tvOptionFour)
         btnSubmit = findViewById(R.id.btnSubmit)
 
+        tvOptionOne?.setOnClickListener(this)
+        tvOptionTwo?.setOnClickListener(this)
+        tvOptionThree?.setOnClickListener(this)
+        tvOptionFour?.setOnClickListener(this)
+
         questionsList = Constants.getQuestions()
 
         setQuestion()
@@ -102,6 +107,27 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        TODO("Not yet implemented")
+        when(view?.id){
+            R.id.tvOptionOne ->{
+                tvOptionOne?.let{
+                    selectedOptionView(it, 1)
+                }
+            }
+            R.id.tvOptionTwo ->{
+                tvOptionTwo?.let{
+                    selectedOptionView(it, 2)
+                }
+            }
+            R.id.tvOptionThree ->{
+                tvOptionThree?.let{
+                    selectedOptionView(it, 3)
+                }
+            }
+            R.id.tvOptionFour ->{
+                tvOptionFour?.let{
+                    selectedOptionView(it, 4)
+                }
+            }
+        }
     }
 }
