@@ -89,7 +89,19 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    override fun onClick(p0: View?) {
+    private fun selectedOptionView(tv:TextView, selectedOptionNum: Int){
+        defaultOptionsView()
+
+        selectedOptionPosition = selectedOptionNum
+
+        tv.setTextColor(Color.parseColor("#363A43"))
+        tv.setTypeface(tv.typeface, Typeface.BOLD)
+        tv.background = ContextCompat.getDrawable(
+            this, R.drawable.selected_option_border_bg
+        )
+    }
+
+    override fun onClick(view: View?) {
         TODO("Not yet implemented")
     }
 }
