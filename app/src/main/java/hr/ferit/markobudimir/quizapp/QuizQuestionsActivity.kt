@@ -133,7 +133,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
             R.id.btnSubmit ->{
-                if(selectedOptionPosition == 0){
+                if(selectedOptionPosition == 5){
                     currentPosition++
                     when{
                         currentPosition <= questionsList!!.size ->{
@@ -148,7 +148,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                             finish()
                         }
                     }
-                }else{
+                    selectedOptionPosition = 0
+                }else if(selectedOptionPosition != 0){
                     val question = questionsList?.get(currentPosition-1)
                     if(question!!.correctAnswer != selectedOptionPosition){
                         answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
@@ -164,7 +165,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         btnSubmit?.text = "GO TO NEXT QUESTION"
                     }
 
-                    selectedOptionPosition = 0
+                    selectedOptionPosition = 5
                 }
             }
         }
