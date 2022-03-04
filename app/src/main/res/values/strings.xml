@@ -7,4 +7,7 @@
     <string name="etName">Name</string>
     <string name="cdFlagImage">Quiz Image</string>
     <string name="btnSubmit">Submit</string>
+    <string name="result">Result</string>
+    <string name="congratulations">Hey, Congratulations!</string>
+    <string name="btnFinish">FINISH</string>
 </resources>

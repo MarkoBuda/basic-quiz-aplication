@@ -5,10 +5,7 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
 import androidx.core.content.ContextCompat
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
@@ -50,10 +47,10 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         questionsList = Constants.getQuestions()
 
         setQuestion()
-        defaultOptionsView()
     }
 
     private fun setQuestion() {
+        defaultOptionsView()
         val question: Question = questionsList!![currentPosition - 1]
         ivFlag?.setImageResource(question.image)
         progressBar?.progress = currentPosition
@@ -136,6 +133,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     when{
                         currentPosition <= questionsList!!.size ->{
                             setQuestion()
+                        }
+                        else ->{
+                            Toast.makeText(this, "You made it to the end", Toast.LENGTH_LONG).show()
                         }
                     }
                 }else{
