@@ -1,5 +1,6 @@
 package hr.ferit.markobudimir.quizapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +13,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var currentPosition: Int = 1
     private var questionsList: ArrayList<Question>? = null
     private var selectedOptionPosition: Int = 0
+    private var userName : String? = null
+    private var correctAnswers: Int = 0
 
     private var progressBar: ProgressBar? = null
     private var tvProgress: TextView? = null
@@ -27,6 +30,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
+
+        userName = intent.getStringExtra(Constants.USER_NAME)
 
         progressBar = findViewById(R.id.progressBar)
         tvProgress = findViewById(R.id.tvProgress)
@@ -135,13 +140,21 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                             setQuestion()
                         }
                         else ->{
-                            Toast.makeText(this, "You made it to the end", Toast.LENGTH_LONG).show()
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME, userName)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, correctAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, questionsList?.size)
+                            startActivity(intent)
+                            finish()
                         }
                     }
                 }else{
                     val question = questionsList?.get(currentPosition-1)
                     if(question!!.correctAnswer != selectedOptionPosition){
                         answerView(selectedOptionPosition, R.drawable.wrong_option_border_bg)
+                    }
+                    else{
+                        correctAnswers++
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
 
