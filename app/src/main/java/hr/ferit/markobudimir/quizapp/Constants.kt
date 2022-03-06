@@ -38,7 +38,7 @@ object Constants {
         val queFour = Question(
             4, "What country does this flag belong to?",
             R.drawable.ic_flag_of_belgium,
-            "Bahamas", "Belgium",
+            "Germany", "Belgium",
             "Barbados", "Belize",
             2
         )
@@ -57,7 +57,7 @@ object Constants {
             6, "What country does this flag belong to?",
             R.drawable.ic_flag_of_germany,
             "Germany", "Georgia",
-            "Greece", "none of these",
+            "Greece", "Belgium",
             1
         )
         questionsList.add(queSix)

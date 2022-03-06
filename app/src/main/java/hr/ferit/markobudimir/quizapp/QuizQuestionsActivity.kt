@@ -11,7 +11,7 @@ import androidx.core.content.ContextCompat
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var currentPosition: Int = 1
-    private var questionsList: ArrayList<Question>? = null
+    private var questionsList: MutableList<Question>? = null
     private var selectedOptionPosition: Int = 0
     private var userName : String? = null
     private var correctAnswers: Int = 0
@@ -49,7 +49,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tvOptionFour?.setOnClickListener(this)
         btnSubmit?.setOnClickListener(this)
 
-        questionsList = Constants.getQuestions()
+        questionsList = Constants.getQuestions().toMutableList()
+        questionsList?.shuffle()
 
         setQuestion()
     }
