@@ -114,23 +114,32 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when(view?.id){
             R.id.tvOptionOne ->{
-                tvOptionOne?.let{
-                    selectedOptionView(it, 1)
+                if(selectedOptionPosition != 5){
+                    tvOptionOne?.let{
+                        selectedOptionView(it, 1)
+                    }
                 }
+
             }
             R.id.tvOptionTwo ->{
-                tvOptionTwo?.let{
-                    selectedOptionView(it, 2)
+                if(selectedOptionPosition != 5) {
+                    tvOptionTwo?.let {
+                        selectedOptionView(it, 2)
+                    }
                 }
             }
             R.id.tvOptionThree ->{
-                tvOptionThree?.let{
-                    selectedOptionView(it, 3)
+                if(selectedOptionPosition != 5) {
+                    tvOptionThree?.let {
+                        selectedOptionView(it, 3)
+                    }
                 }
             }
             R.id.tvOptionFour ->{
-                tvOptionFour?.let{
-                    selectedOptionView(it, 4)
+                if(selectedOptionPosition != 5) {
+                    tvOptionFour?.let {
+                        selectedOptionView(it, 4)
+                    }
                 }
             }
             R.id.btnSubmit ->{
